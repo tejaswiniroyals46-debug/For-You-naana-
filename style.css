@@ -1,0 +1,239 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#000;
+  color:white;
+  font-family:'Poppins',sans-serif;
+  overflow-x:hidden;
+}
+
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+  background:linear-gradient(to bottom,#000,#120012,#1f001f);
+  position:relative;
+}
+
+.main-title{
+  font-size:4rem;
+  color:#ff4fa3;
+  text-shadow:0 0 20px #ff4fa3;
+  animation:glow 2s infinite alternate;
+  font-family:'Dancing Script',cursive;
+}
+
+.typing{
+  margin-top:20px;
+  font-size:1.3rem;
+  max-width:700px;
+  color:#ffd6e7;
+  min-height:80px;
+}
+
+.btn{
+  margin-top:30px;
+  padding:15px 35px;
+  border:none;
+  border-radius:40px;
+  background:#ff4fa3;
+  color:white;
+  font-size:1rem;
+  cursor:pointer;
+  transition:0.4s;
+  box-shadow:0 0 20px #ff4fa3;
+}
+
+.btn:hover{
+  transform:scale(1.1);
+  background:white;
+  color:#ff4fa3;
+}
+
+@keyframes glow{
+  from{
+    text-shadow:0 0 10px #ff4fa3;
+  }
+  to{
+    text-shadow:0 0 30px #ff4fa3,
+    0 0 60px #ff4fa3;
+  }
+}
+
+.love-section{
+  padding:80px 20px;
+  background:#070707;
+}
+
+.message-box{
+  max-width:850px;
+  margin:40px auto;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.1);
+  padding:40px;
+  border-radius:30px;
+  backdrop-filter:blur(10px);
+  box-shadow:0 0 25px rgba(255,79,163,0.3);
+}
+
+.message-box h2{
+  color:#ff5eb2;
+  margin-bottom:20px;
+  font-size:2rem;
+}
+
+.message-box p{
+  line-height:2;
+  color:#f5d7e5;
+  font-size:1.05rem;
+}
+
+.gallery-section{
+  padding:80px 20px;
+  background:#000;
+}
+
+.gallery-title{
+  text-align:center;
+  font-size:3rem;
+  color:#ff5eb2;
+  margin-bottom:50px;
+  font-family:'Dancing Script',cursive;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+}
+
+.gallery img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+  border-radius:25px;
+  transition:0.5s;
+  box-shadow:0 0 20px rgba(255,79,163,0.4);
+}
+
+.gallery img:hover{
+  transform:scale(1.05);
+}
+
+.final-section{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+  background:linear-gradient(to top,#000,#1b001b,#000);
+}
+
+.glass{
+  width:90%;
+  max-width:700px;
+  background:rgba(255,255,255,0.08);
+  border-radius:30px;
+  padding:60px 30px;
+  text-align:center;
+  backdrop-filter:blur(12px);
+  box-shadow:0 0 30px rgba(255,79,163,0.4);
+}
+
+.glass h1{
+  font-size:4rem;
+  color:#ff5eb2;
+  margin-bottom:20px;
+  font-family:'Dancing Script',cursive;
+}
+
+.glass p{
+  font-size:1.3rem;
+  line-height:2;
+  color:#ffe6f1;
+}
+
+.love-text{
+  margin-top:40px;
+  font-size:2rem;
+  color:#ff5eb2;
+  animation:heartbeat 1s infinite;
+}
+
+@keyframes heartbeat{
+  0%{
+    transform:scale(1);
+  }
+  25%{
+    transform:scale(1.08);
+  }
+  50%{
+    transform:scale(1);
+  }
+  75%{
+    transform:scale(1.08);
+  }
+  100%{
+    transform:scale(1);
+  }
+}
+
+.hearts::before,
+.hearts::after{
+  content:'💖 💕 💗 💓 💞';
+  position:fixed;
+  width:100%;
+  top:-50px;
+  left:0;
+  font-size:2rem;
+  animation:fall 10s linear infinite;
+  opacity:0.7;
+}
+
+.hearts::after{
+  animation-delay:5s;
+}
+
+@keyframes fall{
+  0%{
+    transform:translateY(-100px);
+  }
+  100%{
+    transform:translateY(120vh);
+  }
+}
+
+.fade{
+  opacity:0;
+  transform:translateY(60px);
+  transition:1s;
+}
+
+.fade.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+@media(max-width:768px){
+
+  .main-title{
+    font-size:3rem;
+  }
+
+  .gallery-title{
+    font-size:2.3rem;
+  }
+
+  .glass h1{
+    font-size:3rem;
+  }
+
+}
